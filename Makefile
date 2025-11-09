@@ -1,5 +1,9 @@
+CMSIS_CORE_INCLUDE=cmsis/cmsis_core/CMSIS/Core/Include
+CMSIS_WB_INCLUDE=cmsis/cmsis_wb/Include
+
+
 main.o: main.c
-	arm-none-eabi-gcc -mcpu=cortex-m4 main.c -c -o main.o
+	arm-none-eabi-gcc -I${CMSIS_CORE_INCLUDE} -I${CMSIS_WB_INCLUDE} -mcpu=cortex-m4 main.c -c -o main.o
 
 firmware.elf: main.o
 	arm-none-eabi-gcc -T link.ld -nostdlib main.o -o firmware.elf

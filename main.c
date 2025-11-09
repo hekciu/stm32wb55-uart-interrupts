@@ -1,5 +1,7 @@
 
+#define STM32WB55xx
 
+#include "stm32wbxx.h"
 
 
 
